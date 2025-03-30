@@ -12,7 +12,7 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Settings, Mic, Headphones, Volume, Globe, Language, SlidersHorizontal } from 'lucide-react';
+import { Settings, Mic, Headphones, Volume, Globe, Languages, SlidersHorizontal } from 'lucide-react';
 import { useVoiceAgent } from '@/context/VoiceAgentContext';
 import {
   llmOptions,

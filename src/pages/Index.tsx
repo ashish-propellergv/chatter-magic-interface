@@ -3,11 +3,11 @@ import React from 'react';
 import MicButton from '@/components/MicButton';
 import ConversationDisplay from '@/components/ConversationDisplay';
 import SettingsDropdown from '@/components/SettingsDropdown';
-import { VoiceAgentProvider, useVoiceAgent } from '@/context/VoiceAgentContext';
+import { useVoiceAgent } from '@/context/VoiceAgentContext';
 import { Button } from '@/components/ui/button';
 import { generateMessageId } from '@/lib/messageUtils';
 
-const VoiceAgentInterface: React.FC = () => {
+const Index: React.FC = () => {
   const { isListening, addMessage, clearMessages } = useVoiceAgent();
 
   // Demo function to simulate sending a message - replace with your actual backend integration
@@ -58,14 +58,6 @@ const VoiceAgentInterface: React.FC = () => {
         <p className="mt-1">Current Status: {isListening ? 'Connected' : 'Disconnected'}</p>
       </footer>
     </div>
-  );
-};
-
-const Index: React.FC = () => {
-  return (
-    <VoiceAgentProvider>
-      <VoiceAgentInterface />
-    </VoiceAgentProvider>
   );
 };
 

@@ -23,7 +23,7 @@ const LLMModelDropdown: React.FC = () => {
         <Button variant="outline" size="sm" className="w-full justify-between">
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="h-4 w-4" />
-            <span>LLM Model: {config.llmModel}</span>
+            <span>LLM: {config.llmModel}</span>
           </div>
         </Button>
       </DropdownMenuTrigger>

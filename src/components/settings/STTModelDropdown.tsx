@@ -23,7 +23,7 @@ const STTModelDropdown: React.FC = () => {
         <Button variant="outline" size="sm" className="w-full justify-between">
           <div className="flex items-center gap-2">
             <Mic className="h-4 w-4" />
-            <span>STT Model: {config.sttModel}</span>
+            <span>STT: {config.sttModel}</span>
           </div>
         </Button>
       </DropdownMenuTrigger>

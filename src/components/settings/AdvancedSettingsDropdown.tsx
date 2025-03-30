@@ -21,7 +21,7 @@ const AdvancedSettingsDropdown: React.FC = () => {
         <Button variant="outline" size="sm" className="w-full justify-between">
           <div className="flex items-center gap-2">
             <Settings className="h-4 w-4" />
-            <span>Advanced Settings</span>
+            <span>Options</span>
           </div>
         </Button>
       </DropdownMenuTrigger>

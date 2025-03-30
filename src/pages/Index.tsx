@@ -2,7 +2,12 @@
 import React from 'react';
 import MicButton from '@/components/MicButton';
 import ConversationDisplay from '@/components/ConversationDisplay';
-import SettingsDropdown from '@/components/SettingsDropdown';
+import LLMModelDropdown from '@/components/settings/LLMModelDropdown';
+import STTModelDropdown from '@/components/settings/STTModelDropdown';
+import TTSModelDropdown from '@/components/settings/TTSModelDropdown';
+import VoiceOptionDropdown from '@/components/settings/VoiceOptionDropdown';
+import LanguageDropdown from '@/components/settings/LanguageDropdown';
+import AdvancedSettingsDropdown from '@/components/settings/AdvancedSettingsDropdown';
 import { useVoiceAgent } from '@/context/VoiceAgentContext';
 import { Button } from '@/components/ui/button';
 import { generateMessageId } from '@/lib/messageUtils';
@@ -32,9 +37,19 @@ const Index: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center max-w-3xl mx-auto p-4 space-y-6">
-      <header className="w-full flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold">AI Voice Assistant</h1>
-        <SettingsDropdown />
+      <header className="w-full mb-8">
+        <div className="flex justify-between items-center mb-4">
+          <h1 className="text-2xl font-bold">AI Voice Assistant</h1>
+        </div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+          <LLMModelDropdown />
+          <STTModelDropdown />
+          <TTSModelDropdown />
+          <VoiceOptionDropdown />
+          <LanguageDropdown />
+          <AdvancedSettingsDropdown />
+        </div>
       </header>
 
       <ConversationDisplay />

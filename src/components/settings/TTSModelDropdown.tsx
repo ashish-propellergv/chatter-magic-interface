@@ -10,7 +10,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Headphones } from 'lucide-react';
+import { Headphones, ChevronDown } from 'lucide-react';
 import { useVoiceAgent } from '@/context/VoiceAgentContext';
 import { ttsOptions, TTSModel } from '@/config/voiceAgentConfig';
 
@@ -25,6 +25,7 @@ const TTSModelDropdown: React.FC = () => {
             <Headphones className="h-4 w-4" />
             <span>TTS: {config.ttsModel}</span>
           </div>
+          <ChevronDown className="h-4 w-4 ml-2 opacity-70" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

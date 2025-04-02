@@ -10,7 +10,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { SlidersHorizontal } from 'lucide-react';
+import { SlidersHorizontal, ChevronDown } from 'lucide-react';
 import { useVoiceAgent } from '@/context/VoiceAgentContext';
 import { llmOptions, LLMModel } from '@/config/voiceAgentConfig';
 
@@ -25,6 +25,7 @@ const LLMModelDropdown: React.FC = () => {
             <SlidersHorizontal className="h-4 w-4" />
             <span>LLM: {config.llmModel}</span>
           </div>
+          <ChevronDown className="h-4 w-4 ml-2 opacity-70" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

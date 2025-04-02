@@ -10,7 +10,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Globe } from 'lucide-react';
+import { Globe, ChevronDown } from 'lucide-react';
 import { useVoiceAgent } from '@/context/VoiceAgentContext';
 import { languageOptions, LanguageOption } from '@/config/voiceAgentConfig';
 
@@ -25,6 +25,7 @@ const LanguageDropdown: React.FC = () => {
             <Globe className="h-4 w-4" />
             <span>Lang: {config.language}</span>
           </div>
+          <ChevronDown className="h-4 w-4 ml-2 opacity-70" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

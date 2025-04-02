@@ -9,7 +9,7 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Settings } from 'lucide-react';
+import { Settings, ChevronDown } from 'lucide-react';
 import { useVoiceAgent } from '@/context/VoiceAgentContext';
 
 const AdvancedSettingsDropdown: React.FC = () => {
@@ -23,6 +23,7 @@ const AdvancedSettingsDropdown: React.FC = () => {
             <Settings className="h-4 w-4" />
             <span>Options</span>
           </div>
+          <ChevronDown className="h-4 w-4 ml-2 opacity-70" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

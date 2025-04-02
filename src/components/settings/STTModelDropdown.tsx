@@ -10,7 +10,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Mic } from 'lucide-react';
+import { Mic, ChevronDown } from 'lucide-react';
 import { useVoiceAgent } from '@/context/VoiceAgentContext';
 import { sttOptions, STTModel } from '@/config/voiceAgentConfig';
 
@@ -25,6 +25,7 @@ const STTModelDropdown: React.FC = () => {
             <Mic className="h-4 w-4" />
             <span>STT: {config.sttModel}</span>
           </div>
+          <ChevronDown className="h-4 w-4 ml-2 opacity-70" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

@@ -10,7 +10,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Volume } from 'lucide-react';
+import { Volume, ChevronDown } from 'lucide-react';
 import { useVoiceAgent } from '@/context/VoiceAgentContext';
 import { voiceOptions, VoiceOption } from '@/config/voiceAgentConfig';
 
@@ -25,6 +25,7 @@ const VoiceOptionDropdown: React.FC = () => {
             <Volume className="h-4 w-4" />
             <span>Voice: {config.voice}</span>
           </div>
+          <ChevronDown className="h-4 w-4 ml-2 opacity-70" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

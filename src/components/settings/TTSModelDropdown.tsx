@@ -37,7 +37,7 @@ const TTSModelDropdown: React.FC = () => {
         >
           {ttsOptions.map((model) => (
             <DropdownMenuRadioItem key={model} value={model}>
-              {model}
+              {model === 'openai-4o-mini-tts' ? 'Open AI 4o mini TTS' : 'Cartesia'}
             </DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>

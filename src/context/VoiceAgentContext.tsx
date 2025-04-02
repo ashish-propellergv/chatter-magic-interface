@@ -10,6 +10,13 @@ interface VoiceAgentContextType {
   messages: Message[];
   addMessage: (message: Message) => void;
   clearMessages: () => void;
+  metrics: Metrics;
+  updateMetrics: (metrics: Partial<Metrics>) => void;
+}
+
+export interface Metrics {
+  latency: number | null;
+  cost: number | null;
 }
 
 export interface Message {
@@ -25,9 +32,14 @@ export const VoiceAgentProvider: React.FC<{ children: ReactNode }> = ({ children
   const [isListening, setIsListening] = useState(false);
   const [config, setConfig] = useState<VoiceAgentConfig>(defaultConfig);
   const [messages, setMessages] = useState<Message[]>([]);
+  const [metrics, setMetrics] = useState<Metrics>({ latency: null, cost: null });
 
   const updateConfig = (newConfig: Partial<VoiceAgentConfig>) => {
     setConfig((prevConfig) => ({ ...prevConfig, ...newConfig }));
+  };
+
+  const updateMetrics = (newMetrics: Partial<Metrics>) => {
+    setMetrics((prevMetrics) => ({ ...prevMetrics, ...newMetrics }));
   };
 
   const addMessage = (message: Message) => {
@@ -48,6 +60,8 @@ export const VoiceAgentProvider: React.FC<{ children: ReactNode }> = ({ children
         messages,
         addMessage,
         clearMessages,
+        metrics,
+        updateMetrics,
       }}
     >
       {children}

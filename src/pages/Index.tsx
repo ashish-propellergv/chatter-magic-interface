@@ -63,7 +63,7 @@ const Index: React.FC = () => {
         </Button>
       </div>
 
-      <div className="pt-6 pb-10 relative">
+      <div className="pt-6 pb-4 relative">
         <div className={`absolute -inset-4 rounded-full bg-primary/10 transition-opacity duration-300 ${isListening ? 'opacity-100 animate-pulse' : 'opacity-0'}`}></div>
         <MicButton className="relative z-10" />
       </div>

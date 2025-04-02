@@ -17,13 +17,26 @@ import { llmOptions, LLMModel } from '@/config/voiceAgentConfig';
 const LLMModelDropdown: React.FC = () => {
   const { config, updateConfig } = useVoiceAgent();
 
+  const getLLMDisplayName = (model: LLMModel): string => {
+    switch (model) {
+      case 'openai':
+        return 'Open AI';
+      case 'groq':
+        return 'Groq';
+      case 'cerebras':
+        return 'Cerebras';
+      default:
+        return model;
+    }
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="sm" className="w-full justify-between">
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="h-4 w-4" />
-            <span>LLM: {config.llmModel}</span>
+            <span>LLM: {getLLMDisplayName(config.llmModel)}</span>
           </div>
           <ChevronDown className="h-4 w-4 ml-2 opacity-70" />
         </Button>
@@ -37,7 +50,7 @@ const LLMModelDropdown: React.FC = () => {
         >
           {llmOptions.map((model) => (
             <DropdownMenuRadioItem key={model} value={model}>
-              {model}
+              {getLLMDisplayName(model)}
             </DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>

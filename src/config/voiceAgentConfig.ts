@@ -1,9 +1,11 @@
 
-export type LLMModel = "gpt-3.5-turbo" | "gpt-4" | "claude-3-opus" | "claude-3-sonnet" | "gemini-pro";
+export type LLMModel = "groq" | "openai" | "cerebras";
 export type STTModel = "whisper" | "google" | "deepgram" | "assembly-ai";
 export type TTSModel = "cartesia" | "openai-4o-mini-tts";
-export type VoiceOption = "alloy" | "echo" | "fable" | "onyx" | "nova" | "shimmer";
-export type LanguageOption = "english" | "spanish" | "french" | "german" | "chinese" | "japanese";
+export type CartesiaVoiceOption = "indian-woman" | "zia";
+export type OpenAIVoiceOption = "shimmer" | "onyx" | "coral";
+export type VoiceOption = CartesiaVoiceOption | OpenAIVoiceOption;
+export type LanguageOption = "english" | "hindi";
 
 export interface VoiceAgentConfig {
   llmModel: LLMModel;
@@ -16,17 +18,23 @@ export interface VoiceAgentConfig {
 }
 
 export const defaultConfig: VoiceAgentConfig = {
-  llmModel: "gpt-3.5-turbo",
+  llmModel: "openai",
   sttModel: "whisper",
   ttsModel: "cartesia",
-  voice: "nova",
+  voice: "indian-woman",
   language: "english",
   allowInterruptions: true,
   filterBackgroundNoise: true,
 };
 
-export const llmOptions: LLMModel[] = ["gpt-3.5-turbo", "gpt-4", "claude-3-opus", "claude-3-sonnet", "gemini-pro"];
+export const llmOptions: LLMModel[] = ["groq", "openai", "cerebras"];
 export const sttOptions: STTModel[] = ["whisper", "google", "deepgram", "assembly-ai"];
 export const ttsOptions: TTSModel[] = ["cartesia", "openai-4o-mini-tts"];
-export const voiceOptions: VoiceOption[] = ["alloy", "echo", "fable", "onyx", "nova", "shimmer"];
-export const languageOptions: LanguageOption[] = ["english", "spanish", "french", "german", "chinese", "japanese"];
+export const cartesiaVoiceOptions: CartesiaVoiceOption[] = ["indian-woman", "zia"];
+export const openAIVoiceOptions: OpenAIVoiceOption[] = ["shimmer", "onyx", "coral"];
+export const languageOptions: LanguageOption[] = ["english", "hindi"];
+
+// Helper function to get voice options based on TTS model
+export const getVoiceOptionsForTTSModel = (ttsModel: TTSModel): VoiceOption[] => {
+  return ttsModel === "cartesia" ? cartesiaVoiceOptions : openAIVoiceOptions;
+};

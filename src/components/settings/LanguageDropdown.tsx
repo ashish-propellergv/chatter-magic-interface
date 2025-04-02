@@ -37,7 +37,7 @@ const LanguageDropdown: React.FC = () => {
         >
           {languageOptions.map((language) => (
             <DropdownMenuRadioItem key={language} value={language}>
-              {language}
+              {language.charAt(0).toUpperCase() + language.slice(1)}
             </DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>
